@@ -1,0 +1,20 @@
+#firstbox{
+  height: 250px;
+  width: 100%;
+  background-color:#00A884 ;
+}
+#secondbox{
+   position: absolute;
+   height: 900px;
+   width: 60%;
+   background-color: white;
+z-index: 1;
+margin-top: 130px;
+margin-left: 19%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#thirdbox{
+    background-color: #DEDEDD;
+    height: 800px;
+}
