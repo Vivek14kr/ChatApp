@@ -12,7 +12,7 @@ const firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig)
 
 
-const db = firebase.firestore()
-const auth = firebase.auth()
+const db = firebaseApp.firestore()
+const auth = firebaseApp.auth()
 
 export {db, auth}
