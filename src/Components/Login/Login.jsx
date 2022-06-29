@@ -1,6 +1,6 @@
 import { Card, Button, Form, Alert } from "react-bootstrap";
 import { useRef, useState } from "react";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import {Link, useNavigate} from "react-router-dom"
 import { useAuth } from "../../contexts/AuthContext";
 import "./Login.css";
@@ -9,7 +9,7 @@ export const Login = () => {
   const navigate = useNavigate()
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
+  // const passwordConfirmRef = useRef();
   const { login } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
