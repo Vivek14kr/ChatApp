@@ -1,21 +1,21 @@
 
-import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Chat from "../Chat/Chat";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Home.css";
 export const Home = () => {
-  const [error, setError] = useState("");
+  
   const { logout } = useAuth();
   const navigate = useNavigate();
   async function handleLogout() {
-    setError("");
+   
     try {
       await logout();
       navigate("/login");
     } catch {
-      setError("Failed to Log Out");
+      
     }
   }
   return (

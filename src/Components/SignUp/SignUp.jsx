@@ -1,6 +1,6 @@
 import {Card, Button, Form, Alert} from "react-bootstrap"
 import {useRef, useState} from "react";
-import {Container} from "react-bootstrap"
+
 import {useAuth} from "../../contexts/AuthContext"
 import {Link, useNavigate} from "react-router-dom"
 import "./SignUp.css"
@@ -11,7 +11,7 @@ const navigate= useNavigate()
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const {signup, curerentUser} = useAuth()
+  const {signup} = useAuth()
  const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   async function handleSubmit(e){
