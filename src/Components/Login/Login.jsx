@@ -48,19 +48,23 @@ export const Login = () => {
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" ref={passwordRef} required />
                 </Form.Group>
-                
+
                 <Button disabled={loading} className="w-100" type="submit">
-              Login In
+                  Login In
                 </Button>
               </Form>
             </Card.Body>
           </Card>
           <div className="w-100 text-center mt-2">
-            Need an account? 
+            Need an account?
             <Link to="/signup">Sign Up</Link>
+            <Button id="googlebtn" className="w-100">
+              Sign In with Google
+            </Button>
           </div>
         </div>
       </div>
+    
       <div id="firstbox">
         <img
           id="imgtitle"

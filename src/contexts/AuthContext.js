@@ -20,6 +20,7 @@ const [loading, setLoading] = useState(true)
     function logout(){
       return auth.signOut()
     }
+ 
   useEffect(()=>{
    const unsubscribe = auth.onAuthStateChanged(user =>{
      setCurrentUser(user)
