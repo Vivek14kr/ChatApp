@@ -8,14 +8,26 @@ import {PrivateRoute} from "./Components/PrivateRoute"
 function App() {
   return (
     <div className="App">
-  
       <Routes>
-        <Route path="/signup" element={<SignUp/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-       <Route path="/" element={
-        <PrivateRoute>
-       <Home/></PrivateRoute>}></Route>
-        </Routes>
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/rooms/:roomId"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        ></Route>
+      </Routes>
     </div>
   );
 }

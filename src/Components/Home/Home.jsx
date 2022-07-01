@@ -4,10 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Chat from "../Chat/Chat";
 import Sidebar from "../Sidebar/Sidebar";
+
 import "./Home.css";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 export const Home = () => {
   
-  const { logout } = useAuth();
+    const { currentUser } = useContext(AuthContext);
+
+  const { logout, room } = useAuth();
   const navigate = useNavigate();
   async function handleLogout() {
    
@@ -20,12 +25,16 @@ export const Home = () => {
   }
   return (
     <div className="appp">
-      <button onClick={handleLogout}>Logout</button>
       <div className="app__body">
-        <Sidebar />
-        <Chat />
+        <Sidebar currentUser={currentUser} />
+
+        {room ? <Chat /> : null}
+
+        <button id="logout" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
-      {/* <h1>Hello : {currentUser.email}</h1>
+      {/* 
       
         <div id="newhomee">
             <h1>Hello yadadjfdifjdifdofdfjdfid jfi</h1>

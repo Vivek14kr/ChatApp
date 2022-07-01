@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 // import { Container } from "react-bootstrap";
 import {Link, useNavigate} from "react-router-dom"
 import { useAuth } from "../../contexts/AuthContext";
+import {provider} from "../../firebase"
 import "./Login.css";
 
 export const Login = () => {
@@ -10,9 +11,24 @@ export const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   // const passwordConfirmRef = useRef();
-  const { login } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+async function handleGoogle(){
+   
+        try {
+          setError("");
+          setLoading(true);
+          await loginWithGoogle(provider);
+          navigate("/");
+        } catch {
+          setError("Failed to Sign In");
+        }
+        setLoading(false);
+}
+
+
   async function handleSubmit(e) {
     e.preventDefault();
     
@@ -58,7 +74,16 @@ export const Login = () => {
           <div className="w-100 text-center mt-2">
             Need an account?
             <Link to="/signup">Sign Up</Link>
-            <Button id="googlebtn" className="w-100">
+
+
+            <div>
+              <h3>OR</h3>
+              <p>For better experience</p>
+            </div>
+            <Button id="googlebtn" className="w-100" onClick={()=>{
+            handleGoogle()
+                
+            }}>
               Sign In with Google
             </Button>
           </div>

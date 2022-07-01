@@ -12,7 +12,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
-        <App />
+        {/* <StateProvider intialState={initialState} reducer={reducer}>
+          <App />
+        </StateProvider> */}
+        <App/>
       </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>
